@@ -13,7 +13,6 @@
 
 <script lang="ts">
   import { Card, CardContent, List, ListItem } from 'framework7-svelte';
-//  import { DB } from '../js/wallet';
 
   export let DB;
   export let account;
