@@ -1,0 +1,26 @@
+{
+    "tag.pack": "Pack",
+    "tag.booster": "Booster",
+    "tag.asset": "Asset",
+
+    "action.buy": "Buy",
+    "action.wish": "Wish",
+
+    "not.available": "Not available",
+
+    "annonces": "Annonces",
+    "informations": "Informations",
+    "name": "Name",
+
+    "roles": "Roles",
+    "role.author": "Author",
+    "role.artist": "Artist",
+
+    "nonFungibleTokenList.mode.box": "Box",
+    "nonFungibleTokenList.mode.trade": "Trade",
+    "nonFungibleTokenList.mode.sell": "Sell",
+    "nonFungibleTokenList.mode.watch": "Watch",
+    "nonFungibleTokenList.mode.wish": "Wish",
+    "nonFungibleTokenList.mode.buy": "Buy",
+    "nonFungibleTokenList.mode.all": "All"
+}
