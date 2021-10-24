@@ -1,13 +1,10 @@
 <Page name="account">
   <Navbar backLink="Back">
-    <NavTitle sliding>{variation.name}</NavTitle>
+    <NavTitle sliding>{nonFungibleTokenVariation.name}</NavTitle>
     <NavRight>
       <Link popoverOpen=".popover-menu"><Icon f7="ellipsis_circle" color="black" /></Link>
     </NavRight>
   </Navbar>
-
-  <NonFungibleTokenVariationMedia variation={variation} DB={DB}/>
-  <NonFungibleTokenVariationInformations variation={variation} DB={DB}/>
 
   <!--
   <Popover class="popover-menu">
@@ -25,10 +22,8 @@
 </Page>
 
 <script lang="ts">
-  import { Page, Navbar, NavTitle, NavRight, BlockTitle, Toggle, Link, Icon, List, ListItem, Popover } from 'framework7-svelte';
-  import type { Account, Coin, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
-  import NonFungibleTokenVariationMedia from '@adoptbitcoincash/bch-f7/components/NonFungibleTokens/NonFungibleTokenVariationMedia.svelte';
-  import NonFungibleTokenVariationInformations from '@adoptbitcoincash/bch-f7/components/NonFungibleTokens/NonFungibleTokenVariationInformations.svelte';
+  import { Page, Navbar, NavTitle, NavRight, Link, Icon } from 'framework7-svelte';
+  import type { Account, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
 //  import PopupMove from '../components/PopupMove.svelte';
 //  import PopupSend from '../components/PopupSend.svelte';
 
@@ -36,5 +31,5 @@
   export let account : Account;
   export let nonFungibleToken : NonFungibleToken;
 
-  let variation = nonFungibleToken.variation;
+  let nonFungibleTokenVariation = nonFungibleToken.variation;
 </script>

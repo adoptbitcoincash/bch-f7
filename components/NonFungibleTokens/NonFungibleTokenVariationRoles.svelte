@@ -3,8 +3,8 @@
   <List>
     <IdentityListItem identityId={collection.identityId} DB={DB} header={$_('role.author')} />
 
-    {#if variation.roles}
-      {#each variation.roles as role}
+    {#if nonFungibleTokenVariation.roles}
+      {#each nonFungibleTokenVariation.roles as role}
         <IdentityListItem identityId={role.identityId} DB={DB} header={$_(`role.${role.role}`)} />
       {/each}
     {/if}
@@ -20,6 +20,6 @@
   import IdentityListItem from '../Identities/IdentityListItem.svelte';
 
   export let DB;
-  export let variation : NonFungibleTokenVariation;
-  let collection = variation.collection;
+  export let nonFungibleTokenVariation : NonFungibleTokenVariation;
+  let collection = nonFungibleTokenVariation.collection;
 </script>

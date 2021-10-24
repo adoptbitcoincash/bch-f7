@@ -1,11 +1,11 @@
 <Block>
   <BlockTitle>{$_('informations')}</BlockTitle>
   <List>
-    <NonFungibleTokenCollectionListItem nonFungibleTokenCollectionId={collection.id} DB={DB} />
-    <ListItem header={$_('name')} title={variation.name}></ListItem>
+    <NonFungibleTokenCollectionListItem nonFungibleTokenCollectionId={nonFungibleTokenCollection.id} DB={DB} />
+    <ListItem header={$_('name')} title={nonFungibleTokenVariation.name}></ListItem>
 
-    {#each collection.getEnumsIds() as enumId}
-      {#if variation.hasAnyTagsIds(collection.getEnumTagsIds(enumId)) !== false}
+    {#each nonFungibleTokenCollection.getEnumsIds() as enumId}
+      {#if nonFungibleTokenVariation.hasAnyTagsIds(nonFungibleTokenCollection.getEnumTagsIds(enumId)) !== false}
       <ListItem header="{$_(enumId)}" title="{getEnumValueLocale(enumId)}"></ListItem>
       {/if}
     {/each}
@@ -21,11 +21,11 @@
   import NonFungibleTokenCollectionListItem from './NonFungibleTokenCollectionListItem.svelte';
 
   export let DB;
-  export let variation : NonFungibleTokenVariation;
-  let collection = variation.collection;
+  export let nonFungibleTokenVariation : NonFungibleTokenVariation;
+  let nonFungibleTokenCollection = nonFungibleTokenVariation.collection;
 
   function getEnumValueLocale(enumId: string) {
-      let tagId = variation.hasAnyTagsIds(collection.getEnumTagsIds(enumId));
+      let tagId = nonFungibleTokenVariation.hasAnyTagsIds(nonFungibleTokenCollection.getEnumTagsIds(enumId));
       if(!tagId)
         return "";
 

@@ -1,5 +1,5 @@
 <div style="text-align:center; margin-top:15px; margin-bottom:10px;">
-  <img src={variation.image.cdn} alt="" class="visual" on:click={standaloneDark.open()}/>
+  <img src={nonFungibleTokenVariation.image.cdn} alt="" class="visual" on:click={standaloneDark.open()}/>
 </div>
 
 <PhotoBrowser theme="dark" photos={photos} bind:this={standaloneDark} />
@@ -13,8 +13,9 @@
   import type { NonFungibleTokenVariation } from "@adoptbitcoincash/bch-orm";
 
   export let DB;
-  export let variation : NonFungibleTokenVariation;
+  export let nonFungibleTokenVariation : NonFungibleTokenVariation;
 
   let standaloneDark;
-  const photos = [variation.image.cdn];
+  console.log(nonFungibleTokenVariation)
+  const photos = [nonFungibleTokenVariation.image.cdn];
 </script>

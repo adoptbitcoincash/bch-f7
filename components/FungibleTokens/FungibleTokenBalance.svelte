@@ -1,7 +1,7 @@
 <Card>
   <CardContent padding={false}>
     <List medial-list>
-      <ListItem link={`/accounts/${account.id}/coins/${coin.id}/fungibleTokens/${fungibleTokenBalance.id}`} footer="{fungibleTokenBalance.toString()}" title={fungibleToken.name} after={fiat}>
+      <ListItem link={`/accounts/${account.id}/coins/${coin.id}/fungibleTokens/${fungibleToken.id}`} footer="{balance}" title={fungibleToken.name} after={fiat}>
         <img slot="media" alt="" src="/cdn/tokens/small/{fungibleToken.id}.png" width="44"/>
       </ListItem>
     </List>
@@ -13,13 +13,14 @@
 
 <script lang="ts">
   import { Card, CardContent, List, ListItem } from 'framework7-svelte';
+  import type { Account, Coin, FungibleToken, FungibleTokenBalance } from "@adoptbitcoincash/bch-orm";
 
   export let DB;
-  export let account;
-  export let coin;
-  export let fungibleTokenBalance;
+  export let account : Account;
+  export let coin : Coin;
+  export let fungibleToken : FungibleToken;
+  export let fungibleTokenBalance : FungibleTokenBalance;
 
-  let fungibleToken = DB.hub.fungibleTokens.find(fungibleTokenBalance.fungibleTokenId);
-  fungibleTokenBalance.fungibleToken = fungibleToken;
-  let fiat = fungibleTokenBalance.toFiat(coin.usd);
+  let balance = fungibleTokenBalance ? fungibleTokenBalance.toString() : `0 ${fungibleToken.id}`;
+  let fiat = fungibleTokenBalance ? fungibleTokenBalance.toFiat(coin.usd) : `$ 0`;
 </script>

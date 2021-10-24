@@ -9,9 +9,11 @@
     "not.available": "Not available",
 
     "annonces": "Annonces",
-    "informations": "Informations",
-    "name": "Name",
     "collection": "Collection",
+    "informations": "Informations",
+    "your.assets": "Your assets",
+
+    "name": "Name",
 
     "roles": "Roles",
     "role.author": "Author",

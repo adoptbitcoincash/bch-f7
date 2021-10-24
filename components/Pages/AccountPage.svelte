@@ -10,15 +10,15 @@
 
   <Tabs>
     <Tab id="account-coins" class="page-content" tabActive={tabActive === 'account-coins'} onTabShow={() => tabActive = 'account-coins'}>
-      {#each account.coinBalances.toArray() as coinBalance}
-        <CoinBalance DB={DB} account={account} coinBalance={coinBalance}/>
+      {#each coins as coin}
+        <CoinBalance DB={DB} account={account} coin={coin} coinBalance={account.coinBalances.findByCoinId(coin.id).first()}/>
       {/each}
     </Tab>
 
     <Tab id="account-assets" class="page-content" tabActive={tabActive === 'account-assets'} onTabShow={() => tabActive = 'account-assets'}>
       <div class="nfts">
-        {#each account.nonFungibleTokens.toArray() as nonFungibleToken}
-          <NonFungibleTokenVignette DB={DB} account={account} nonFungibleToken={nonFungibleToken}/>
+        {#each variationsIds as nonFungibleTokenVariationId}
+          <NonFungibleTokenVariationVignette DB={DB} account={account} nonFungibleTokenVariation={getVariation(nonFungibleTokenVariationId)}/>
         {/each}
       </div>
     </Tab>
@@ -33,11 +33,17 @@
 <script lang="ts">
   import { Page, Navbar, Subnavbar, Segmented, Button, Tabs, Tab } from 'framework7-svelte';
   import CoinBalance from '../FungibleTokens/CoinBalance.svelte';
-  import NonFungibleTokenVignette from '../NonFungibleTokens/NonFungibleTokenVignette.svelte';
+  import NonFungibleTokenVariationVignette from '../NonFungibleTokens/NonFungibleTokenVariationVignette.svelte';
   import type { Account } from "@adoptbitcoincash/bch-orm";
 
   export let DB;
   export let account : Account;
 
   let tabActive = 'account-coins';
+  let coins = DB.hub.coins.toArray();
+  let variationsIds = account.nonFungibleTokens.getVariationsIds();
+
+  function getVariation(id: string) {
+    return DB.hub.nonFungibleTokenVariations.find(id);
+  }
 </script>

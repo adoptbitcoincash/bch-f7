@@ -6,11 +6,9 @@
     </NavRight>
   </Navbar>
 
-  {#await fungibleTokenBalancePromise then fungibleTokenBalances}
-    {#each fungibleTokenBalances as fungibleTokenBalance}
-      <FungibleTokenBalance DB={DB} account={account} coin={coin} fungibleTokenBalance={fungibleTokenBalance}/>
-    {/each}
-  {/await}
+  {#each fungibleTokens as fungibleToken}
+    <FungibleTokenBalance DB={DB} account={account} coin={coin} fungibleToken={fungibleToken} fungibleTokenBalance={account.fungibleTokenBalances.findByFungibleTokenId(fungibleToken.id).first()}/>
+  {/each}
 
   <Popover class="popover-menu">
     <List>
@@ -33,12 +31,7 @@
   export let account : Account;
   export let coin : Coin;
 
-  let fungibleTokenBalancePromise = getFungibleTokenBalance();
-
-  async function getFungibleTokenBalance() {
-    let fungibleTokenBalances = await account.getFungibleTokenBalances();
-    return fungibleTokenBalances.findByFungibleTokensIds(coin.fungibleTokensIds).toArray();
-  }
+  let fungibleTokens = DB.hub.fungibleTokens.findByCoinId(coin.id).toArray();
 
 /*
   import PopupMove from '../components/PopupMove.svelte';
