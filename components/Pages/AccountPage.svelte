@@ -34,7 +34,6 @@
   import { Page, Navbar, Subnavbar, Segmented, Button, Tabs, Tab } from 'framework7-svelte';
   import CoinBalance from '../FungibleTokens/CoinBalance.svelte';
   import NonFungibleTokenVignette from '../NonFungibleTokens/NonFungibleTokenVignette.svelte';
-//  import NonFungibleTokenVignette from './NonFungibleTokenVignette.svelte';
   import type { Account } from "@adoptbitcoincash/bch-orm";
 
   export let DB;

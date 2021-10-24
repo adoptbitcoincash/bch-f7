@@ -1,6 +1,6 @@
 <div class="nft">
   <div class="visual2">
-    <div class="visual"><Link href={`/accounts/${account.id}/nonfungibletokens/${nonFungibleToken.id}/`}><img src="{nonFungibleToken.variation.image.cdn}" alt=""/></Link></div>
+    <div class="visual"><Link href={`/accounts/${account.id}/nonFungibleTokens/${nonFungibleToken.id}`}><img src="{nonFungibleToken.variation.image.cdn}" alt=""/></Link></div>
   </div>
 </div>
 

@@ -1,6 +1,7 @@
 <Block>
   <BlockTitle>{$_('informations')}</BlockTitle>
   <List>
+    <NonFungibleTokenCollectionListItem nonFungibleTokenCollectionId={collection.id} DB={DB} />
     <ListItem header={$_('name')} title={variation.name}></ListItem>
 
     {#each collection.getEnumsIds() as enumId}
@@ -17,6 +18,7 @@
   import { _ } from 'svelte-i18n';
   import { BlockTitle, List, ListItem, Block } from 'framework7-svelte';
   import type { NonFungibleTokenVariation } from "@adoptbitcoincash/bch-orm";
+  import NonFungibleTokenCollectionListItem from './NonFungibleTokenCollectionListItem.svelte';
 
   export let DB;
   export let variation : NonFungibleTokenVariation;

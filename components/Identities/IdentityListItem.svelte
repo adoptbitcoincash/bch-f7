@@ -1,9 +1,14 @@
-<ListItem header={$_(header)} title="{identity.name}" link="/profiles/{identity.id}">
-  <img slot="media" class="message-avatar" src="{identity.avatarSmall.cdn}" width="40" alt="" />
-</ListItem>
+{#if identity.imageAvatar}
+  <ListItem header={$_(header)} title="{identity.name}" link="/identities/{identity.id}">
+    <img slot="media" class="message-avatar" src="{identity.imageAvatar.cdn}" width="40" alt="" />
+  </ListItem>
+{:else}
+  <ListItem header={$_(header)} title="{identity.name}" link="/identities/{identity.id}">
+    <i slot="media" class="f7-icons" style="font-size:28px;">person_alt_circle_fill</i>
+  </ListItem>
+{/if}
 
-<style>
-</style>
+<style></style>
 
 <script lang="ts">
   import { _ } from 'svelte-i18n';

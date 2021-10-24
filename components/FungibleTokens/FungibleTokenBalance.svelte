@@ -1,7 +1,7 @@
 <Card>
   <CardContent padding={false}>
     <List medial-list>
-      <ListItem link={`/accounts/${account.id}/coins/${coin.id}/fungibletokens/${fungibleTokenBalance.id}`} footer="{fungibleTokenBalance.toString()}" title={fungibleToken.name} after={fiat}>
+      <ListItem link={`/accounts/${account.id}/coins/${coin.id}/fungibleTokens/${fungibleTokenBalance.id}`} footer="{fungibleTokenBalance.toString()}" title={fungibleToken.name} after={fiat}>
         <img slot="media" alt="" src="/cdn/tokens/small/{fungibleToken.id}.png" width="44"/>
       </ListItem>
     </List>
