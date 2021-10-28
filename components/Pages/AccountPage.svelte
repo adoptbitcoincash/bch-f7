@@ -40,7 +40,7 @@
   export let account : Account;
 
   let tabActive = 'account-coins';
-  let coins = DB.hub.coins.toArray();
+  let coins = DB.hub.coins.findByIds(account.enabledCoinsIds).toArray();
   let variationsIds = account.nonFungibleTokens.getVariationsIds();
 
   function getVariation(id: string) {
