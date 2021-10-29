@@ -5,6 +5,7 @@
 
     "action.buy": "Buy",
     "action.wish": "Wish",
+    "action.browse.all.categories": "Browse all categories",
 
     "not.available": "Not available",
 
@@ -14,6 +15,15 @@
     "your.assets": "Your assets",
 
     "name": "Name",
+
+    "tab.account": "Account",
+    "tab.collections": "Collections",
+    "tab.contacts": "Contacts",
+    "tab.home": "Home",
+    "tab.lists": "Lists",
+    "tab.more": "More",
+    "tab.search": "Search",
+    "tab.shop": "Shop",
 
     "roles": "Roles",
     "role.author": "Author",
@@ -25,5 +35,15 @@
     "nonFungibleTokenList.mode.watch": "Watch",
     "nonFungibleTokenList.mode.wish": "Wish",
     "nonFungibleTokenList.mode.buy": "Buy",
-    "nonFungibleTokenList.mode.all": "All"
+    "nonFungibleTokenList.mode.all": "All",
+
+    "social.artstation": "Artstation",
+    "social.discord": "Discord",
+    "social.email": "Email",
+    "social.facebook": "Facebook",
+    "social.telegram": "Telegram",
+    "social.instagram": "Instagram",
+    "social.twitter": "Twitter",
+    "social.website": "Website",
+    "social.youtube": "Youtube"
 }
