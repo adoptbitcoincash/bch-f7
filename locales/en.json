@@ -12,11 +12,13 @@
     "annonces": "Annonces",
     "collection": "Collection",
     "informations": "Informations",
-    "your.assets": "Your assets",
+    "my.nfts": "My NFTs",
 
     "name": "Name",
 
     "tab.account": "Account",
+    "tab.applications": "Apps",
+    "tab.blockchain": "Blockchain",
     "tab.collections": "Collections",
     "tab.contacts": "Contacts",
     "tab.home": "Home",
@@ -24,6 +26,7 @@
     "tab.more": "More",
     "tab.search": "Search",
     "tab.shop": "Shop",
+    "tab.wallet": "Wallet",
 
     "roles": "Roles",
     "role.author": "Author",

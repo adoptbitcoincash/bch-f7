@@ -1,11 +1,14 @@
 <Page name="account" pageContent={false} withSubnavbar>
   <Navbar title={account.name} backLink="Back">
+    {#if application && application.useNonFungibleTokens}
     <Subnavbar>
       <Segmented strong>
         <Button tabLink="#account-coins" tabLinkActive={tabActive === 'account-coins'}>Coins</Button>
+
         <Button tabLink="#account-assets" tabLinkActive={tabActive === 'account-assets'}>Assets</Button>
       </Segmented>
     </Subnavbar>
+    {/if}
   </Navbar>
 
   <Tabs>
@@ -15,6 +18,7 @@
       {/each}
     </Tab>
 
+    {#if application && application.useNonFungibleTokens}
     <Tab id="account-assets" class="page-content" tabActive={tabActive === 'account-assets'} onTabShow={() => tabActive = 'account-assets'}>
       <div class="nfts">
         {#each variationsIds as nonFungibleTokenVariationId}
@@ -22,6 +26,7 @@
         {/each}
       </div>
     </Tab>
+    {/if}
 
   </Tabs>
 </Page>
@@ -39,9 +44,10 @@
   export let DB;
   export let account : Account;
 
-  let tabActive = 'account-coins';
   let coins = DB.hub.coins.findByIds(account.enabledCoinsIds).toArray();
   let variationsIds = account.nonFungibleTokens.getVariationsIds();
+  let application = DB.hub.applications.find(account.applicationId);
+  let tabActive = application && application.useNonFungibleTokens ? 'account-assets' : 'account-coins';
 
   function getVariation(id: string) {
     return DB.hub.nonFungibleTokenVariations.find(id);

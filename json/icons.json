@@ -1,11 +1,15 @@
 {
     "account": "bitcoin_circle_fill",
+    "applications": "circle_grid_3x3_fill",
+    "blockchain": "link",
     "categories": "text_justifyleft",
     "collections": "rectangle_grid_2x2_fill",
     "contacts": "person_2_fill",
+    "filter": "line_horizontal_3_decrease_circle",
     "home": "house",
     "lists": "square_list_fill",
     "more": "ellipsis",
     "search": "search",
-    "shop": "cart"
+    "shop": "cart",
+    "wallet": "bitcoin_circle_fill"
 }

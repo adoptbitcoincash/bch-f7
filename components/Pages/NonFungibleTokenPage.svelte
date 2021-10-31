@@ -6,29 +6,57 @@
     </NavRight>
   </Navbar>
 
-  <!--
-  <Popover class="popover-menu">
-    <List>
-      <ListItem link="#" popoverClose popupOpen=".popup-move" title="Move"><Icon slot="media" f7="arrow_right_arrow_left" /></ListItem>
-      <ListItem link="#" popoverClose popupOpen=".popup-send" title="Send"><Icon slot="media" f7="arrowtriangle_up_fill" /></ListItem>
-      <ListItem divider/>
-      <ListItem link="#" popoverClose popupOpen=".popup-more" title="More informations"><Icon slot="media" f7="text_badge_plus" /></ListItem>
-    </List>
-  </Popover>
+  <div style="margin:15px;">
+    <Row  style="height: 150px">
+      <Col width="33">
+        <img src={nonFungibleTokenVariation.image.cdn} alt="" class="visual"/>
+      </Col>
+      <Col width="66">
+        <div class="section">
+          <div class="header">
+            <div class="title">{nonFungibleTokenVariation.name}</div>
+          </div>
+          <div class="main">
+            <div class="footer">
+              <div class="buy">
+                <div class="buttons-list">
+                </div>
+              </div>
+            </div>
+            <div class="mint">Mint 56/100</div>
+          </div>
+        </div>
+      </Col>
+    </Row>
+  </div>
 
-  <PopupMove/>
-  <PopupSend/>
-  -->
+  <div>Show signatures</div>
+  <div>Show additional datafeeds</div>
+  <div>Show identified owners</div>
+  <div>Add to wish list</div>
+  <div>Add to watch list</div>
 </Page>
 
+<style>
+  .visual {max-height: 150px;}
+
+  .section { display: flex; flex-flow: column; height: 150px; }
+  .header { }
+  .main { flex: 2; overflow: auto; }
+  .footer { float:right; height:120px; right:20px; display:flex; position:absolute; align-items:flex-end;}
+
+  .title {font-size: 120%; font-weight:bold;}
+  .highlight {margin-top: 10px; font-size: 110%;}
+  .subhighlight {font-size: 100%;}
+  .buy {display: flex; justify-content: flex-end;}
+</style>
+
 <script lang="ts">
-  import { Page, Navbar, NavTitle, NavRight, Link, Icon } from 'framework7-svelte';
-  import type { Account, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
-//  import PopupMove from '../components/PopupMove.svelte';
-//  import PopupSend from '../components/PopupSend.svelte';
+  import { Page, Navbar, NavTitle, NavRight, Link, Icon, Row, Col, Button } from 'framework7-svelte';
+  import type { Accounts, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
 
   export let DB;
-  export let account : Account;
+  export let accounts : Accounts;
   export let nonFungibleToken : NonFungibleToken;
 
   let nonFungibleTokenVariation = nonFungibleToken.variation;
