@@ -5,7 +5,7 @@
 </div>
 
 <style>
-  .nft {flex: 46%; margin: 2%; margin-bottom:20px; max-height:200px;}
+  .nft {flex: 46%; max-width: 46%; margin: 2%; margin-bottom:20px; max-height:200px;}
   .visual2 {height:200px;}
   .visual {  display: flex; justify-content: center; align-items: center; height:200px;}
   .visual img {max-width: 100%; max-height:200px;}

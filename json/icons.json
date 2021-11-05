@@ -1,5 +1,6 @@
 {
     "account": "bitcoin_circle_fill",
+    "add": "plus",
     "applications": "circle_grid_3x3_fill",
     "blockchain": "link",
     "categories": "text_justifyleft",
@@ -9,6 +10,7 @@
     "home": "house",
     "lists": "square_list_fill",
     "more": "ellipsis",
+    "qrcode": "qrcode",
     "search": "search",
     "shop": "cart",
     "wallet": "bitcoin_circle_fill"
