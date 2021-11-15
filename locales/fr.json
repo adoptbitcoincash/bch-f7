@@ -1,0 +1,70 @@
+{
+    "tag.pack": "Paquet",
+    "tag.booster": "Recharge",
+    "tag.asset": "Objet",
+
+    "action.buy": "Acheter",
+    "action.cancel": "Annuler",
+    "action.close": "Fermer",
+    "action.more": "Plus",
+    "action.open": "Ouvrir",
+    "action.receive": "Recevoir",
+    "action.send": "Envoyer",
+    "action.wish": "Souhait",
+    "action.browse.all.categories": "Parcouris les categories",
+
+    "available": "Disponible",
+    "not.available": "Non disponible",
+
+    "annonces": "Annonces",
+    "activity": "Activite",
+    "collection": "Collection",
+    "currency": "Monnaie",
+    "informations": "Informations",
+    "language": "Langage",
+    "notifications": "Notifications",
+    "settings": "Reglages",
+    "my.nfts": "Mes NFTs",
+
+    "name": "Nom",
+
+    "tab.account": "Compte",
+    "tab.applications": "Apps",
+    "tab.blockchain": "Blockchain",
+    "tab.collections": "Collections",
+    "tab.contacts": "Contacts",
+    "tab.home": "Accueil",
+    "tab.lists": "Listes",
+    "tab.more": "Autres",
+    "tab.search": "Recherche",
+    "tab.shop": "Magasin",
+    "tab.wallet": "Portefeuille",
+
+    "roles": "Roles",
+    "role.author": "Auteur",
+    "role.artist": "Artiste",
+
+    "nonFungibleTokenList.mode.box": "Boite",
+    "nonFungibleTokenList.mode.trade": "Echange",
+    "nonFungibleTokenList.mode.sell": "Vendre",
+    "nonFungibleTokenList.mode.watch": "Surveiller",
+    "nonFungibleTokenList.mode.wish": "Vouloir",
+    "nonFungibleTokenList.mode.buy": "Acheter",
+    "nonFungibleTokenList.mode.all": "Tous",
+
+    "social.artstation": "Artstation",
+    "social.discord": "Discord",
+    "social.email": "Email",
+    "social.facebook": "Facebook",
+    "social.telegram": "Telegram",
+    "social.instagram": "Instagram",
+    "social.twitter": "Twitter",
+    "social.website": "Website",
+    "social.youtube": "Youtube",
+
+    "language.en": "Anglais",
+    "language.fr": "Francais",
+
+    "currency.EUR": "Euro",
+    "currency.USD": "Dollar Americain"
+}

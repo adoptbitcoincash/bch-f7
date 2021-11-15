@@ -9,7 +9,7 @@
   <div style="margin:15px;">
     <Row  style="height: 150px">
       <Col width="33">
-        <img src={nonFungibleTokenVariation.image.cdn} alt="" class="visual"/>
+        <img src={DB.cdn.getImage(nonFungibleTokenVariation.image)} alt="" class="visual"/>
       </Col>
       <Col width="66">
         <div class="section">

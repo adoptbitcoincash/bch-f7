@@ -1,5 +1,5 @@
 <ListItem link={`/nonFungibleTokens/nonFungibleTokenVariations/${nonFungibleTokenVariation.id}/nonFungibleTokens/${nonFungibleToken.id}`} on:click={clicked}>
-  <img slot="media" src={nonFungibleTokenVariation.image.cdn} width="25" alt="" />
+  <img slot="media" src={DB.cdn.getImage(nonFungibleTokenVariation.image)} width="25" alt="" class="lazy" />
   <div slot="title">
     Mint {Math.floor(Math.random() * 150)} / 150
   </div>

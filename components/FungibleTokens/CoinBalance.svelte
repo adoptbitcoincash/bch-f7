@@ -2,7 +2,7 @@
   <CardContent padding={false}>
     <List medial-list>
       <ListItem link={`/accounts/${account.id}/coins/${coin.id}`} footer={balance} title={coin.name} after={fiat}>
-        <img slot="media" alt="" src="/cdn/tokens/small/{coin.id}.png" width="44"/>
+        <img slot="media" alt="" src={DB.cdn.getImage(`/cdn/tokens/small/${coin.id}.png`)} width="44"/>
       </ListItem>
     </List>
   </CardContent>

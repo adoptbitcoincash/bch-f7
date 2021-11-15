@@ -1,6 +1,6 @@
 {#if identity.imageAvatar}
   <ListItem header={$_(header)} title="{identity.name}" link="/identities/{identity.id}">
-    <img slot="media" class="message-avatar" src="{identity.imageAvatar.cdn}" width="40" alt="" />
+    <img slot="media" class="message-avatar lazy" src={DB.cdn.getImage(identity.imageAvatar)} width="40" alt="" />
   </ListItem>
 {:else}
   <ListItem header={$_(header)} title="{identity.name}" link="/identities/{identity.id}">

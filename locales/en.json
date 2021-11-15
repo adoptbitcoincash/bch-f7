@@ -4,15 +4,26 @@
     "tag.asset": "Asset",
 
     "action.buy": "Buy",
+    "action.cancel": "Cancel",
+    "action.close": "Close",
     "action.more": "More",
+    "action.open": "Open",
+    "action.receive": "Receive",
+    "action.send": "Send",
     "action.wish": "Wish",
     "action.browse.all.categories": "Browse all categories",
 
+    "available": "Available",
     "not.available": "Not available",
 
     "annonces": "Annonces",
+    "activity": "Activity",
     "collection": "Collection",
+    "currency": "Currency",
     "informations": "Informations",
+    "language": "Language",
+    "notifications": "Notifications",
+    "settings": "Settings",
     "my.nfts": "My NFTs",
 
     "name": "Name",
@@ -49,5 +60,11 @@
     "social.instagram": "Instagram",
     "social.twitter": "Twitter",
     "social.website": "Website",
-    "social.youtube": "Youtube"
+    "social.youtube": "Youtube",
+
+    "language.en": "English",
+    "language.fr": "French",
+
+    "currency.EUR": "Euro",
+    "currency.USD": "United States Dollar"
 }

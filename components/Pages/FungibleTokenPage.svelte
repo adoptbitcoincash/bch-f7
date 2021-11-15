@@ -2,7 +2,7 @@
   <Navbar title={fungibleToken.name} backLink="Back" />
 
   <div style="text-align:center; margin-top:20px; margin-bottom:20px; ">
-    <img src="/cdn/tokens/large/{fungibleToken.id}.png" alt="" class="visual" style="width:100px; height:100px;"/>
+    <img src={DB.cdn.getImage(`/cdn/tokens/large/${fungibleToken.id}.png`)} alt="" class="visual" style="width:100px; height:100px;"/>
     <div style="margin-top:10px; font-size:160%; font-weight:bold;">{fiat}</div>
     <div style="margin-top:5px; font-size:100%; color:#999;">{balance}</div>
   </div>

@@ -1,6 +1,6 @@
 {#if withMedia}
   <ListItem header={$_('collection')} title="{nonFungibleTokenCollection.name}" link="/nonFungibleTokenCollections/{nonFungibleTokenCollection.id}/details">
-    <img slot="media" class="message-avatar" src="{nonFungibleTokenCollection.imageAvatar.cdn}" width="40" alt="" />
+    <img slot="media" class="message-avatar" src={DB.cdn.getImage(nonFungibleTokenCollection.imageAvatar)} width="40" alt="" />
   </ListItem>
 {:else}
   <ListItem header={$_('collection')} title="{nonFungibleTokenCollection.name}" link="/nonFungibleTokenCollections/{nonFungibleTokenCollection.id}/details"/>

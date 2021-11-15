@@ -1,5 +1,5 @@
 <div style="text-align:center; margin-top:15px; margin-bottom:10px;">
-  <img src={nonFungibleTokenVariation.image.cdn} alt="" class="visual" on:click={standaloneDark.open()}/>
+  <img src={DB.cdn.getImage(nonFungibleTokenVariation.image)} alt="" class="visual lazy" on:click={standaloneDark.open()}/>
 </div>
 
 <PhotoBrowser theme="dark" photos={photos} bind:this={standaloneDark} />
@@ -17,5 +17,5 @@
 
   let standaloneDark;
   console.log(nonFungibleTokenVariation)
-  const photos = [nonFungibleTokenVariation.image.cdn];
+  const photos = [DB.cdn.getImage(nonFungibleTokenVariation.image)];
 </script>
