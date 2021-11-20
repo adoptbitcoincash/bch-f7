@@ -6,9 +6,9 @@
     </NavRight>
   </Navbar>
 
-  <NonFungibleTokenVariationMedia nonFungibleTokenVariation={nonFungibleTokenVariation} DB={DB}/>
-  <NonFungibleTokenVariationAssets nonFungibleTokenVariation={nonFungibleTokenVariation} DB={DB} accounts={accounts}/>
-  <NonFungibleTokenVariationInformations nonFungibleTokenVariation={nonFungibleTokenVariation} DB={DB}/>
+  <NonFungibleTokenVariationMedia nonFungibleTokenVariation={nonFungibleTokenVariation} BCH={BCH}/>
+  <NonFungibleTokenVariationAssets nonFungibleTokenVariation={nonFungibleTokenVariation} BCH={BCH} accounts={accounts}/>
+  <NonFungibleTokenVariationInformations nonFungibleTokenVariation={nonFungibleTokenVariation} BCH={BCH}/>
 </Page>
 
 <script lang="ts">
@@ -18,7 +18,7 @@
   import NonFungibleTokenVariationInformations from '../NonFungibleTokens/NonFungibleTokenVariationInformations.svelte';
   import NonFungibleTokenVariationAssets from '../NonFungibleTokens/NonFungibleTokenVariationAssets.svelte';
 
-  export let DB;
+  export let BCH;
   export let accounts : Accounts;
   export let nonFungibleTokenVariation : NonFungibleTokenVariation;
 </script>

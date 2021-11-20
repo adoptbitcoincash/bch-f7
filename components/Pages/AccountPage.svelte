@@ -14,7 +14,7 @@
   <Tabs>
     <Tab id="account-coins" class="page-content" tabActive={tabActive === 'account-coins'} onTabShow={() => tabActive = 'account-coins'}>
       {#each coins as coin}
-        <CoinBalance DB={DB} account={account} coin={coin} coinBalance={account.coinBalances.findByCoinId(coin.id).first()}/>
+        <CoinBalance BCH={BCH} account={account} coin={coin} coinBalance={account.coinBalances.findByCoinId(coin.id).first()}/>
       {/each}
     </Tab>
 
@@ -22,7 +22,7 @@
     <Tab id="account-assets" class="page-content" tabActive={tabActive === 'account-assets'} onTabShow={() => tabActive = 'account-assets'}>
       <div class="nfts">
         {#each variationsIds as nonFungibleTokenVariationId}
-          <NonFungibleTokenVariationVignette DB={DB} account={account} nonFungibleTokenVariation={getVariation(nonFungibleTokenVariationId)}/>
+          <NonFungibleTokenVariationVignette BCH={BCH} account={account} nonFungibleTokenVariation={getVariation(nonFungibleTokenVariationId)}/>
         {/each}
       </div>
     </Tab>
@@ -41,15 +41,15 @@
   import NonFungibleTokenVariationVignette from '../NonFungibleTokens/NonFungibleTokenVariationVignette.svelte';
   import type { Account } from "@adoptbitcoincash/bch-orm";
 
-  export let DB;
+  export let BCH;
   export let account : Account;
 
-  let coins = DB.hub.coins.findByIds(account.enabledCoinsIds).toArray();
+  let coins = BCH.hub.coins.findByIds(account.enabledCoinsIds).toArray();
   let variationsIds = account.nonFungibleTokens.getVariationsIds();
-  let application = DB.hub.applications.find(account.applicationId);
+  let application = BCH.hub.applications.find(account.applicationId);
   let tabActive = application && application.useNonFungibleTokens ? 'account-assets' : 'account-coins';
 
   function getVariation(id: string) {
-    return DB.hub.nonFungibleTokenVariations.find(id);
+    return BCH.hub.nonFungibleTokenVariations.find(id);
   }
 </script>

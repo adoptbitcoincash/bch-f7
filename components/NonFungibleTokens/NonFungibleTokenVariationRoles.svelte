@@ -1,11 +1,11 @@
 <Block>
   <BlockTitle>{$_('roles')}</BlockTitle>
   <List>
-    <IdentityListItem identityId={collection.identityId} DB={DB} header={$_('role.author')} />
+    <IdentityListItem identityId={collection.identityId} BCH={BCH} header={$_('role.author')} />
 
     {#if nonFungibleTokenVariation.roles}
       {#each nonFungibleTokenVariation.roles as role}
-        <IdentityListItem identityId={role.identityId} DB={DB} header={$_(`role.${role.role}`)} />
+        <IdentityListItem identityId={role.identityId} BCH={BCH} header={$_(`role.${role.role}`)} />
       {/each}
     {/if}
   </List>
@@ -19,7 +19,7 @@
   import type { NonFungibleTokenVariation } from "@adoptbitcoincash/bch-orm";
   import IdentityListItem from '../Identities/IdentityListItem.svelte';
 
-  export let DB;
+  export let BCH;
   export let nonFungibleTokenVariation : NonFungibleTokenVariation;
   let collection = nonFungibleTokenVariation.collection;
 </script>

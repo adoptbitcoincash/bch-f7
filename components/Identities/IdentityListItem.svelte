@@ -1,6 +1,6 @@
 {#if identity.imageAvatar}
   <ListItem header={$_(header)} title="{identity.name}" link="/identities/{identity.id}">
-    <img slot="media" class="message-avatar lazy" src={DB.cdn.getImage(identity.imageAvatar)} width="40" alt="" />
+    <img slot="media" class="message-avatar lazy" src={BCH.cdn.getImage(identity.imageAvatar)} width="40" alt="" />
   </ListItem>
 {:else}
   <ListItem header={$_(header)} title="{identity.name}" link="/identities/{identity.id}">
@@ -14,8 +14,8 @@
   import { _ } from 'svelte-i18n';
   import { ListItem } from 'framework7-svelte';
 
-  export let DB;
+  export let BCH;
   export let identityId: string;
   export let header: string;
-  let identity = DB.hub.identities.find(identityId);
+  let identity = BCH.hub.identities.find(identityId);
 </script>

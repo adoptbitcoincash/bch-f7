@@ -1,6 +1,6 @@
 <Block>
   <BlockTitle>{$_('my.nfts')}</BlockTitle>
-  <NonFungibleTokenVariationAssetsList DB={DB} accounts={accounts} nonFungibleTokenVariation={nonFungibleTokenVariation} />
+  <NonFungibleTokenVariationAssetsList BCH={BCH} accounts={accounts} nonFungibleTokenVariation={nonFungibleTokenVariation} />
 </Block>
 
 <style></style>
@@ -11,7 +11,7 @@
   import type { Accounts, NonFungibleTokenVariation } from "@adoptbitcoincash/bch-orm";
   import NonFungibleTokenVariationAssetsList from './NonFungibleTokenVariationAssetsList.svelte';
 
-  export let DB;
+  export let BCH;
   export let accounts : Accounts;
   export let nonFungibleTokenVariation : NonFungibleTokenVariation;
 </script>

@@ -1,7 +1,7 @@
 <Block>
   <BlockTitle>{$_('informations')}</BlockTitle>
   <List>
-    <NonFungibleTokenCollectionListItem nonFungibleTokenCollectionId={nonFungibleTokenCollection.id} DB={DB} />
+    <NonFungibleTokenCollectionListItem nonFungibleTokenCollectionId={nonFungibleTokenCollection.id} BCH={BCH} />
     <ListItem header={$_('name')} title={nonFungibleTokenVariation.name}></ListItem>
 
     {#each nonFungibleTokenCollection.getEnumsIds() as enumId}
@@ -20,7 +20,7 @@
   import type { NonFungibleTokenVariation } from "@adoptbitcoincash/bch-orm";
   import NonFungibleTokenCollectionListItem from './NonFungibleTokenCollectionListItem.svelte';
 
-  export let DB;
+  export let BCH;
   export let nonFungibleTokenVariation : NonFungibleTokenVariation;
   let nonFungibleTokenCollection = nonFungibleTokenVariation.collection;
 

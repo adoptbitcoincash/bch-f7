@@ -1,6 +1,6 @@
 <List noChevron style="margin-left:10px;">
   {#each nonFungibleTokens.toArray() as nonFungibleToken}
-    <NonFungibleTokenVariationAssetsListItem DB={DB} nonFungibleTokenVariation={nonFungibleTokenVariation} nonFungibleToken={nonFungibleToken} />
+    <NonFungibleTokenVariationAssetsListItem BCH={BCH} nonFungibleTokenVariation={nonFungibleTokenVariation} nonFungibleToken={nonFungibleToken} />
   {/each}
 </List>
 
@@ -12,7 +12,7 @@
   import type { Accounts, NonFungibleTokenVariation } from "@adoptbitcoincash/bch-orm";
   import NonFungibleTokenVariationAssetsListItem from './NonFungibleTokenVariationAssetsListItem.svelte';
 
-  export let DB;
+  export let BCH;
   export let accounts : Accounts;
   export let nonFungibleTokenVariation : NonFungibleTokenVariation;
   let nonFungibleTokens = accounts.nonFungibleTokens.findByNonFungibleTokenVariationId(nonFungibleTokenVariation.id);

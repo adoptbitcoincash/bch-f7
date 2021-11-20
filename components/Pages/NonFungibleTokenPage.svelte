@@ -9,7 +9,7 @@
   <div style="margin:15px;">
     <Row  style="height: 150px">
       <Col width="33">
-        <img src={DB.cdn.getImage(nonFungibleTokenVariation.image)} alt="" class="visual"/>
+        <img src={BCH.cdn.getImage(nonFungibleTokenVariation.image)} alt="" class="visual"/>
       </Col>
       <Col width="66">
         <div class="section">
@@ -55,7 +55,7 @@
   import { Page, Navbar, NavTitle, NavRight, Link, Icon, Row, Col, Button } from 'framework7-svelte';
   import type { Accounts, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
 
-  export let DB;
+  export let BCH;
   export let accounts : Accounts;
   export let nonFungibleToken : NonFungibleToken;
 

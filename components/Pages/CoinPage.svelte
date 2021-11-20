@@ -7,7 +7,7 @@
   </Navbar>
 
   <div style="text-align:center; margin-top:20px; margin-bottom:20px; ">
-    <img src={DB.cdn.getImage(`/cdn/tokens/large/${coin.id}.png`)} alt="" class="visual" style="width:100px; height:100px;"/>
+    <img src={BCH.cdn.getImage(`/cdn/tokens/large/${coin.id}.png`)} alt="" class="visual" style="width:100px; height:100px;"/>
     <div style="margin-top:10px; font-size:160%; font-weight:bold;">{fiat}</div>
     <div style="margin-top:5px; font-size:100%; color:#999;">{balance}</div>
   </div>
@@ -24,7 +24,7 @@
   </Block>
 
   {#each fungibleTokens as fungibleToken}
-    <FungibleTokenBalance DB={DB} account={account} coin={coin} fungibleToken={fungibleToken} fungibleTokenBalance={account.fungibleTokenBalances.findByFungibleTokenId(fungibleToken.id).first()}/>
+    <FungibleTokenBalance BCH={BCH} account={account} coin={coin} fungibleToken={fungibleToken} fungibleTokenBalance={account.fungibleTokenBalances.findByFungibleTokenId(fungibleToken.id).first()}/>
   {/each}
 
   <Popover class="popover-menu">
@@ -44,12 +44,12 @@
   import FungibleTokenBalance from '../FungibleTokens/FungibleTokenBalance.svelte';
   import type { Account, Coin } from "@adoptbitcoincash/bch-orm";
 
-  export let DB;
+  export let BCH;
   export let account : Account;
   export let coin : Coin;
 
   let coinBalance = account.coinBalances.findByCoinId(coin.id).first();
-  let fungibleTokens = DB.hub.fungibleTokens.findByCoinId(coin.id).toArray();
+  let fungibleTokens = BCH.hub.fungibleTokens.findByCoinId(coin.id).toArray();
 
   let balance = coinBalance ? coinBalance.toString() : `0 ${coin.id}`;
   let fiat = coinBalance ? coinBalance.toFiat(coin.usd) : `$ 0`;

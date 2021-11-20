@@ -1,6 +1,6 @@
 <div class="nft">
   <div class="visual2">
-    <div class="visual"><Link href={`/accounts/${account.id}/nonFungibleTokens/${nonFungibleToken.id}`}><img src={DB.getImage(nonFungibleToken.variation)} alt="" class="lazy"/></Link></div>
+    <div class="visual"><Link href={`/accounts/${account.id}/nonFungibleTokens/${nonFungibleToken.id}`}><img src={BCH.getImage(nonFungibleToken.variation)} alt="" class="lazy"/></Link></div>
   </div>
 </div>
 
@@ -19,7 +19,7 @@
   import { Link } from 'framework7-svelte';
   import type { Account, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
 
-  export let DB;
+  export let BCH;
   export let account : Account;
   export let nonFungibleToken : NonFungibleToken;
 </script>
