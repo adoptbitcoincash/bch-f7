@@ -1,6 +1,6 @@
 <Page name="account">
   <Navbar backLink="Back">
-    <NavTitle sliding>{nonFungibleTokenVariation.name}</NavTitle>
+    <NavTitle sliding>{nftVariation.name}</NavTitle>
     <NavRight>
       <Link popoverOpen=".popover-menu"><Icon f7="ellipsis_circle" color="black" /></Link>
     </NavRight>
@@ -9,12 +9,12 @@
   <div style="margin:15px;">
     <Row  style="height: 150px">
       <Col width="33">
-        <img src={BCH.cdn.getImage(nonFungibleTokenVariation.image)} alt="" class="visual"/>
+        <img src={BCH.cdn.getImage(nftVariation.image)} alt="" class="visual"/>
       </Col>
       <Col width="66">
         <div class="section">
           <div class="header">
-            <div class="title">{nonFungibleTokenVariation.name}</div>
+            <div class="title">{nftVariation.name}</div>
           </div>
           <div class="main">
             <div class="footer">
@@ -53,11 +53,11 @@
 
 <script lang="ts">
   import { Page, Navbar, NavTitle, NavRight, Link, Icon, Row, Col, Button } from 'framework7-svelte';
-  import type { Accounts, NonFungibleToken } from "@adoptbitcoincash/bch-orm";
+  import type { Accounts, Nft } from "@adoptbitcoincash/bch-orm";
 
   export let BCH;
   export let accounts : Accounts;
-  export let nonFungibleToken : NonFungibleToken;
+  export let nft : Nft;
 
-  let nonFungibleTokenVariation = nonFungibleToken.variation;
+  let nftVariation = nft.variation;
 </script>

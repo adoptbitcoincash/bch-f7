@@ -1,6 +1,6 @@
 <Page name="account" pageContent={false} withSubnavbar>
   <Navbar title={account.name} backLink="Back">
-    {#if application && application.useNonFungibleTokens}
+    {#if application && application.useNfts}
     <Subnavbar>
       <Segmented strong>
         <Button tabLink="#account-coins" tabLinkActive={tabActive === 'account-coins'}>Coins</Button>
@@ -18,11 +18,11 @@
       {/each}
     </Tab>
 
-    {#if application && application.useNonFungibleTokens}
+    {#if application && application.useNfts}
     <Tab id="account-assets" class="page-content" tabActive={tabActive === 'account-assets'} onTabShow={() => tabActive = 'account-assets'}>
       <div class="nfts">
-        {#each variationsIds as nonFungibleTokenVariationId}
-          <NonFungibleTokenVariationVignette BCH={BCH} account={account} nonFungibleTokenVariation={getVariation(nonFungibleTokenVariationId)}/>
+        {#each variationsIds as nftVariationId}
+          <NftVariationVignette BCH={BCH} account={account} nftVariation={getVariation(nftVariationId)}/>
         {/each}
       </div>
     </Tab>
@@ -38,18 +38,18 @@
 <script lang="ts">
   import { Page, Navbar, Subnavbar, Segmented, Button, Tabs, Tab } from 'framework7-svelte';
   import CoinBalance from '../FungibleTokens/CoinBalance.svelte';
-  import NonFungibleTokenVariationVignette from '../NonFungibleTokens/NonFungibleTokenVariationVignette.svelte';
+  import NftVariationVignette from '../Nfts/NftVariationVignette.svelte';
   import type { Account } from "@adoptbitcoincash/bch-orm";
 
   export let BCH;
   export let account : Account;
 
   let coins = BCH.hub.coins.findByIds(account.enabledCoinsIds).toArray();
-  let variationsIds = account.nonFungibleTokens.getVariationsIds();
+  let variationsIds = account.nfts.getVariationsIds();
   let application = BCH.hub.applications.find(account.applicationId);
-  let tabActive = application && application.useNonFungibleTokens ? 'account-assets' : 'account-coins';
+  let tabActive = application && application.useNfts ? 'account-assets' : 'account-coins';
 
   function getVariation(id: string) {
-    return BCH.hub.nonFungibleTokenVariations.find(id);
+    return BCH.hub.nftVariations.find(id);
   }
 </script>
