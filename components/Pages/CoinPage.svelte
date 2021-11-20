@@ -41,7 +41,7 @@
 
 <script lang="ts">
   import { Page, Navbar, NavTitle, NavRight, Link, Icon, Popover, List, ListItem, Block, Row, Col, Button } from 'framework7-svelte';
-  import FungibleTokenBalance from '../FungibleTokens/FungibleTokenBalance.svelte';
+  import FungibleTokenBalance from '../Fts/FtBalance.svelte';
   import type { Account, Coin } from "@adoptbitcoincash/bch-orm";
 
   export let BCH;

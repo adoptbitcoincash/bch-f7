@@ -1,8 +1,8 @@
 <Page name="token">
-  <Navbar title={fungibleToken.name} backLink="Back" />
+  <Navbar title={ft.name} backLink="Back" />
 
   <div style="text-align:center; margin-top:20px; margin-bottom:20px; ">
-    <img src={BCH.cdn.getImage(`/cdn/tokens/large/${fungibleToken.id}.png`)} alt="" class="visual" style="width:100px; height:100px;"/>
+    <img src={BCH.cdn.getImage(`/cdn/tokens/large/${ft.id}.png`)} alt="" class="visual" style="width:100px; height:100px;"/>
     <div style="margin-top:10px; font-size:160%; font-weight:bold;">{fiat}</div>
     <div style="margin-top:5px; font-size:100%; color:#999;">{balance}</div>
   </div>
@@ -38,16 +38,16 @@
 
 <script lang="ts">
   import { Page, Navbar, Block, Row, Col, Button, Icon, List, ListItem, BlockTitle } from 'framework7-svelte';
-  import type { Account, Coin, FungibleToken } from "@adoptbitcoincash/bch-orm";
+  import type { Account, Coin, Ft } from "@adoptbitcoincash/bch-orm";
 
   export let BCH;
   export let account : Account;
   export let coin : Coin;
-  export let fungibleToken : FungibleToken;
+  export let ft : Ft;
 
-  let fungibleTokenBalance = account.fungibleTokenBalances.findByFungibleTokenId(fungibleToken.id).first();
-  let balance = fungibleTokenBalance ? fungibleTokenBalance.toString() : `0 ${fungibleToken.id}`;
-  let fiat = fungibleTokenBalance ? fungibleTokenBalance.toFiat(coin.usd) : `$ 0`;
+  let ftBalance = account.ftBalances.findByFtId(ft.id).first();
+  let balance = ftBalance ? ftBalance.toString() : `0 ${ft.id}`;
+  let fiat = ftBalance ? ftBalance.toFiat(coin.usd) : `$ 0`;
 
   let transactions = [
     {date: "24 oct", title: "Unknow", amount:"0.03945203 BCH", fiat:"$ -10.34"},

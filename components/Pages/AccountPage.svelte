@@ -37,7 +37,7 @@
 
 <script lang="ts">
   import { Page, Navbar, Subnavbar, Segmented, Button, Tabs, Tab } from 'framework7-svelte';
-  import CoinBalance from '../FungibleTokens/CoinBalance.svelte';
+  import CoinBalance from '../Fts/CoinBalance.svelte';
   import NftVariationVignette from '../Nfts/NftVariationVignette.svelte';
   import type { Account } from "@adoptbitcoincash/bch-orm";
 
